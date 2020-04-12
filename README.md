@@ -1,5 +1,5 @@
 # min-string
-URL Friendly Integer Compression in JavaScript. It uses ASCII characters starting from ! (33) to ~ (126) excluding a few characters that influence the way a URL works (/\.?#) as well as the comma (,) to easily distinguish raw data from compressed data.
+URL Friendly Lossless Integer Compression in JavaScript. It uses ASCII characters starting from ! (33) to ~ (126) excluding a few characters that influence the way a URL works (/\.?#) as well as the comma (,) to easily distinguish raw data from compressed data.
 
 Written with no dependencies in ES6. Can be used via npm with `yarn add min-string` or as a minified script available at https://unpkg.com/min-string@1.0.1/min-string.min.js
 
