@@ -1,3 +1,5 @@
+;(function() {
+"use strict"
 let min = {
 	base64_symbols: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!$',
 	counter_symbols: '^*-_~`',
@@ -426,4 +428,6 @@ let min = {
 min.compress = min.pipe(min.toBase64, min.counter, min.twoMostCommonPatterns, min.thirdMostCommonPattern, min.commonThreeCharacterPatterns, min.commonSpecialPatterns, min.topTwoPatterns, min.threeCharacterPermutations, min.twoCharacterPermutations);
 min.decompress = min.pipe(min.unsubTwoCharacterPermutations, min.unsubThreeCharacterPermutations, min.unsubTopTwoPatterns, min.unsubCommonSpecialPatterns, min.unsubCommonThreeCharacterPatterns, min.unsubThirdMostCommonPattern, min.unsubTwoMostCommonPatterns, min.decounter, min.toDecimal);
 
-export min;
+if(typeof module !== 'undefined') module['exports'] = { min };
+else window.min = min;
+}());
