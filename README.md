@@ -6,9 +6,9 @@ The main goals of min-string are:
 
 min-string uses ASCII characters starting from ! (33) to ~ (126) excluding a few characters that influence the way a URL works (/\\.?#) as well as the space ( ) and comma (,).
 
-Written with no dependencies in ES6. Can be used via npm with `yarn add min-string` or as a minified script available at https://unpkg.com/min-string@1.0.1/min-string.min.js
+Written with no dependencies in ES6. Can be used via npm with `yarn add min-string` or as a minified script available at https://unpkg.com/min-string@latest/min-string.min.js
 
-The script is 7KB minified.
+The script is 8KB minified.
 
 min-string only works on arrays of integers between 0 and 255. Compression ratios are usually within between 25% to 35% of the original size but results vary. It's intended for small data and has not been tested with large sets of data.
 
@@ -16,6 +16,8 @@ Read about the blog post that inspired it here https://crabcyb.org/post/minimizi
 
 The package is free to use for any use. I would love to know if you use it in your project.
 This package is not in any way an encryption method or a security feature. There is no salt with this package. It only benefits from its obscurity.
+
+min-string works best with data that shares common patterns. This script is focused on replacing common patterns with tokens. In my case, a lot of values are 0 and 255. On random data, it will usually still find a pattern but the result isn't likely as small. You can also change the common patterns by modifying min.patterns and min.other_patterns.
 
 **Benchmark**
 
@@ -44,3 +46,20 @@ This package is not in any way an encryption method or a security feature. There
 | hashids | 2554 | 84.2% |
 | base64 | 1396 | 46% |
 | min-string | 764 | 25.2% |
+
+**min-string with values over 255**
+
+min-string includes two functions that are not used internally: normalize and denormalize. These functions add support for up to 65280 (255 << 8). The same could be done for supporting higher, but even normalized a lot of the optimizations stop having a large impact.
+
+*Using the following integer array as input*
+
+```
+5168,0,8176,0,64,16376,0,96,32764,0,112,65534,0,121,65535,0,123,65535,49153,15487,65535,61446,32767,65535,63516,33791,65535,65528,1023,65535,65520,1023,65535,65504,18431,65535,65408,16383,65535,63488,8191,65534,0,8191,65535,0,8115,65087,32768,7939,40507,32768,3,36411,32768,7,7795,32768,15,7
+```
+
+| method | length | ratio |
+| --- | --- | --- |
+| raw | 291 | 100% |
+| hashids | 209 | 71.8% |
+| base64 | 160 | 55% |
+| min-string | 107 | 36.8% |
