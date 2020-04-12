@@ -1,6 +1,6 @@
 {
   "name": "min-string",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "URL Friendly Integer compression made in JavaScript",
   "main": "min-string.js",
   "scripts": {
