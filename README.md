@@ -17,6 +17,8 @@ Read about the blog post that inspired it here https://crabcyb.org/post/minimizi
 The package is free to use for any use. I would love to know if you use it in your project.
 This package is not in any way an encryption method or a security feature. There is no salt with this package. It only benefits from its obscurity.
 
+min-string works best with data that shares common patterns. This script is focused on replacing common patterns with tokens. In my case, a lot of values are 0 and 255. On random data, it will usually still find a pattern but the result isn't likely as small. You can also change the common patterns by modifying min.patterns and min.other_patterns.
+
 **Benchmark**
 
 *Using the following integer array as input*
@@ -47,7 +49,7 @@ This package is not in any way an encryption method or a security feature. There
 
 **min-string with values over 255**
 
-min includes two functions that are not used internally: normalize and denormalize. These functions add support for up to 65280 (255 << 8). The same could be done for supporting higher, but even normalized a lot of the optimizations stop having a large impact.
+min-string includes two functions that are not used internally: normalize and denormalize. These functions add support for up to 65280 (255 << 8). The same could be done for supporting higher, but even normalized a lot of the optimizations stop having a large impact.
 
 *Using the following integer array as input*
 
