@@ -10,3 +10,4 @@ min-string only works on arrays of integers between 0 and 255. Compression ratio
 Read about the blog post that inspired it here https://crabcyb.org/post/minimizing-shape-up
 
 The package is free to use for any use. I would love to know if you use it in your project.
+This package is not in any way an encryption method or a security feature. There is no salt with this package. It only benefits from its obscurity.
