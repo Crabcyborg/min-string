@@ -1,0 +1,27 @@
+{
+  "name": "min-string",
+  "version": "1.0.1",
+  "description": "URL Friendly Integer compression made in JavaScript",
+  "main": "min-string.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crabcyborg/min-string.git"
+  },
+  "keywords": [
+    "javascript",
+    "integer",
+    "compression",
+    "short",
+    "string",
+    "standalone"
+  ],
+  "author": "Crabcyborg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crabcyborg/min-string/issues"
+  },
+  "homepage": "https://github.com/Crabcyborg/min-string#readme"
+}
