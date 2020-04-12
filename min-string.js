@@ -376,25 +376,54 @@ let min = {
 	
 		return result + remaining;
 	},
-	normalize: input => {
-		const length = input.length;
-		let output = [];
-		for(let index = 0; index < length; ++index) {
-			const first = input[index] >> 8;
-			output.push(first, input[index] - (first << 8));
+	normalize: (input, max) => {
+		max === undefined && (max = Math.max(...input));
+	
+		if(max <= 255) return input;
+	
+		if(max <= (255 << 8)) {
+			const length = input.length;
+			let output = [];
+			for(let index = 0; index < length; ++index) {
+				const first = input[index] >> 8;
+				output.push(first, input[index] - (first << 8));
+			}
+	
+			return output;
 		}
 	
-		return output;
+		if(max <= (255 << 16)) {
+			const length = input.length;
+			let output = [];
+			for(let index = 0; index < length; ++index) {
+				const first = input[index] >> 16;
+				const second = (input[index] - (first << 16)) >> 8;
+				output.push(first, second, input[index] - (second << 8) - (first << 16));
+			}
+	
+			return output;
+		}
 	},
-	denormalize: input => {
-		const to = input.length-1;
-		let output = [];
-		for(let index = 0; index < to; index += 2) output.push((input[index] << 8) + input[index+1]);
-		return output;
+	denormalize: (input, max) => {
+		if(max <= 255) return input;
+	
+		if(max <= (255 << 8)) {
+			const to = input.length-1;
+			let output = [];
+			for(let index = 0; index < to; index += 2) output.push((input[index] << 8) + input[index+1]);
+			return output;
+		}
+	
+		if(max <= (255 << 16)) {
+			const to = input.length-2;
+			let output = [];
+			for(let index = 0; index < to; index += 3) output.push((input[index] << 16) + (input[index+1] << 8) + input[index+2]);
+			return output;
+		}
 	}
 };
 
 min.compress = min.pipe(min.toBase64, min.counter, min.twoMostCommonPatterns, min.thirdMostCommonPattern, min.commonThreeCharacterPatterns, min.commonSpecialPatterns, min.topTwoPatterns, min.threeCharacterPermutations, min.twoCharacterPermutations);
 min.decompress = min.pipe(min.unsubTwoCharacterPermutations, min.unsubThreeCharacterPermutations, min.unsubTopTwoPatterns, min.unsubCommonSpecialPatterns, min.unsubCommonThreeCharacterPatterns, min.unsubThirdMostCommonPattern, min.unsubTwoMostCommonPatterns, min.decounter, min.toDecimal);
 
-export { min };
+export min;
