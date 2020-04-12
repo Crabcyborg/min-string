@@ -46,6 +46,7 @@ This package is not in any way an encryption method or a security feature. There
 | min-string | 764 | 25.2% |
 
 **min-string with values over 255**
+
 min includes two functions that are not used internally: normalize and denormalize. These functions add support for up to 65280 (255 << 8). The same could be done for supporting higher, but even normalized a lot of the optimizations stop having a large impact.
 
 *Using the following integer array as input*
