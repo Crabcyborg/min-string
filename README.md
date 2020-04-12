@@ -49,7 +49,7 @@ min-string works best with data that shares common patterns. This script is focu
 
 **min-string with values over 255**
 
-min-string includes two functions that are not used internally: normalize and denormalize. These functions add support for up to 65280 (255 << 8). The same could be done for supporting higher, but even normalized a lot of the optimizations stop having a large impact.
+min-string includes two functions that are not used internally: normalize and denormalize. These functions add support for larger integers. The max is determined from data automatically (at a performance cost) and is required for denormalizing. 255<<8 and 255<<16 max values are supported. Bear in mind that higher max values don't get minimized as well.
 
 *Using the following integer array as input*
 
