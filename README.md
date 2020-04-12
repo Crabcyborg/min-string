@@ -5,6 +5,8 @@ Written with no dependencies in ES6. Can be used via npm with `yarn add min-stri
 
 The script is 7KB minified.
 
-min-string only works on arrays of integers between 0 and 255. Compression ratios are usually within between 25% to 35% of the original size but results vary.
+min-string only works on arrays of integers between 0 and 255. Compression ratios are usually within between 25% to 35% of the original size but results vary. It's intended for small data and has not been tested with large sets of data.
 
 Read about the blog post that inspired it here https://crabcyb.org/post/minimizing-shape-up
+
+The package is free to use for any use. I would love to know if you use it in your project.
