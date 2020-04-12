@@ -19,7 +19,9 @@ This package is not in any way an encryption method or a security feature. There
 ```
 
 *Number of characters by method*
-raw         497   100%
-hashids     409   82.3%
-base64      220   44.3%
-min-string  146   29.4%
+| method | length | ratio |
+| --- | --- | --- |
+| raw | 497 | 100% |
+| hashids | 409 | 82.3% |
+| base64 | 220 | 44.3% |
+| min-string | 146 | 29.4% |
