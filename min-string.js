@@ -375,6 +375,22 @@ let min = {
 		}
 	
 		return result + remaining;
+	},
+	normalize: input => {
+		const length = input.length;
+		let output = [];
+		for(let index = 0; index < length; ++index) {
+			const first = input[index] >> 8;
+			output.push(first, input[index] - (first << 8));
+		}
+	
+		return output;
+	},
+	denormalize: input => {
+		const to = input.length-1;
+		let output = [];
+		for(let index = 0; index < to; index += 2) output.push((input[index] << 8) + input[index+1]);
+		return output;
 	}
 };
 
