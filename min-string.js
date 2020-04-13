@@ -383,7 +383,7 @@ let min = {
 	
 		if(max <= 255) return input;
 	
-		if(max <= (255 << 8)) {
+		if(max <= (256 << 8)) {
 			const length = input.length;
 			let output = [];
 			for(let index = 0; index < length; ++index) {
@@ -394,7 +394,7 @@ let min = {
 			return output;
 		}
 	
-		if(max <= (255 << 16)) {
+		if(max <= (256 << 16)) {
 			const length = input.length;
 			let output = [];
 			for(let index = 0; index < length; ++index) {
@@ -409,14 +409,14 @@ let min = {
 	denormalize: (input, max) => {
 		if(max <= 255) return input;
 	
-		if(max <= (255 << 8)) {
+		if(max <= (256 << 8)) {
 			const to = input.length-1;
 			let output = [];
 			for(let index = 0; index < to; index += 2) output.push((input[index] << 8) + input[index+1]);
 			return output;
 		}
 	
-		if(max <= (255 << 16)) {
+		if(max <= (256 << 16)) {
 			const to = input.length-2;
 			let output = [];
 			for(let index = 0; index < to; index += 3) output.push((input[index] << 16) + (input[index+1] << 8) + input[index+2]);
