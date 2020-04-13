@@ -49,7 +49,7 @@ min-string works best with data that shares common patterns. This script is focu
 
 **min-string with values over 255**
 
-min-string includes two functions that are not used internally: normalize and denormalize. These functions add support for larger integers. The max is determined from data automatically (at a performance cost) and is required for denormalizing. 255<<8 and 255<<16 max values are supported. Bear in mind that higher max values don't get minimized as well.
+min-string includes two functions that are not used internally: normalize and denormalize. These functions add support for larger integers. The max is determined from data automatically (at a performance cost) and is required for denormalizing. 256<<8 and 256<<16 max values are supported. Bear in mind that higher max values don't get minimized as well.
 
 *Using the following integer array as input*
 
@@ -63,3 +63,16 @@ min-string includes two functions that are not used internally: normalize and de
 | hashids | 209 | 71.8% |
 | base64 | 160 | 55% |
 | min-string | 107 | 36.8% |
+
+*Using the following integer array as input*
+
+```
+3870976,8388672,8192,1048584,3584,327686,12584496,133123,14549289,38016,4866085,2113272,1397770,11142485,174721,5587114,10507600,2795541,5507754,349442,11174229,4237984,5591082,11015508,698885,5571242,8475968,11182165,5253800,1397770,11142485,174721,5587114,10507600,2861077,5511851,2088906,11183445,5417641,5592234,11206655,13281919
+```
+
+| method | length | ratio |
+| --- | --- | --- |
+| raw | 333 | 100% |
+| hashids | 233 | 70% |
+| base64 | 168 | 50.5% |
+| min-string | 144 | 43.2% |
