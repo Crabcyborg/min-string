@@ -46,6 +46,7 @@ min-string works best with data that shares common patterns. This script is focu
 | hashids | 2554 | 84.2% |
 | base64 | 1396 | 46% |
 | min-string | 764 | 25.2% |
+| https://crabcyb.org/post/minimizing-large-shape-up | 521 | 17.2% |
 
 **min-string with values over 255**
 
@@ -76,3 +77,6 @@ min-string includes two functions that are not used internally: normalize and de
 | hashids | 233 | 70% |
 | base64 | 168 | 50.5% |
 | min-string | 144 | 43.2% |
+
+*Using with strings*
+I've experimented with strings here https://crabcyb.org/experiment/min-string-string
