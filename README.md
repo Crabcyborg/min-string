@@ -82,5 +82,6 @@ min-string includes two functions that are not used internally: normalize and de
 
 
 **min-string with strings**
+
 I've experimented with strings here https://crabcyb.org/experiment/min-string-string
 If you have a string with repeating patterns similar to "AAAAAABBBBCCCCAAAA" `min.counter` might also be useful
