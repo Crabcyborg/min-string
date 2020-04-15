@@ -201,9 +201,9 @@ let min = {
 	topTwoPatterns: input => min.subTopPattern(min.subTopPattern(input, ';'), ':'),
 	unsubPattern: (input, character) => {
 		let first_index = input.indexOf(character);
-		if(first_index === -1) return input;	
+		if(first_index === -1) return input;
 		const pattern = input[first_index+1] + input[first_index+2];
-		return input.replace(character+pattern, pattern).replace(new RegExp(character, 'g'), pattern);
+		return input.replace(character+pattern, pattern).replace(new RegExp(min.escape(character), 'g'), pattern);
 	},
 	unsubTopTwoPatterns: input => min.unsubPattern(min.unsubPattern(input, ':'), ';'),
 	ruleAdjustment: (pattern, rule_index) => {
