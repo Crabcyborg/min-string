@@ -46,10 +46,12 @@ min-string works best with data that shares common patterns. This script is focu
 | hashids | 2554 | 84.2% |
 | base64 | 1396 | 46% |
 | min-string | 764 | 25.2% |
+| https://crabcyb.org/post/minimizing-large-shape-up | 505 | 16.6% |
 
 **min-string with values over 255**
 
 min-string includes two functions that are not used internally: normalize and denormalize. These functions add support for larger integers. The max is determined from data automatically (at a performance cost) and is required for denormalizing. 256<<8 and 256<<16 max values are supported. Bear in mind that higher max values don't get minimized as well.
+
 
 *Using the following integer array as input*
 
@@ -64,6 +66,7 @@ min-string includes two functions that are not used internally: normalize and de
 | base64 | 160 | 55% |
 | min-string | 107 | 36.8% |
 
+
 *Using the following integer array as input*
 
 ```
@@ -76,3 +79,9 @@ min-string includes two functions that are not used internally: normalize and de
 | hashids | 233 | 70% |
 | base64 | 168 | 50.5% |
 | min-string | 144 | 43.2% |
+
+
+**min-string with strings**
+
+I've experimented with strings here https://crabcyb.org/experiment/min-string-string
+If you have a string with repeating patterns similar to "AAAAAABBBBCCCCAAAA" `min.counter` might also be useful
