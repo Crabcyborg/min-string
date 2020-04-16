@@ -33,7 +33,7 @@ min-string works best with data that shares common patterns. This script is focu
 | hashids | 409 | 82.3% |
 | base64 | 220 | 44.3% |
 | min-string | 146 | 29.4% |
-| https://crabcyb.org/post/minimizing-large-shape-up | 116 | 23.3% |
+| https://crabcyb.org/post/minimizing-large-shape-up | 111 | 22.3% |
 
 *Using the following integer array as input*
 
