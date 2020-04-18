@@ -4,13 +4,13 @@ The main goals of min-string are:
 1. Create the shortest string possible from a given set of integers
 2. Use a small set of characters that will work in a URL
 
-min-string uses ASCII characters starting from ! (33) to ~ (126) excluding a few characters that influence the way a URL works (/\\.?#) as well as the space ( ) and comma (,).
+min-string uses ASCII characters starting from ! (33) to ~ (126) excluding a few characters that influence the way a URL works (/\\.?#) as well as the space ( ) and comma (,). min-string is customizable, modular, functional, and simple.
 
 Written with no dependencies in ES6. Can be used via npm with `yarn add min-string` or as a minified script available at https://unpkg.com/min-string@latest/min-string.min.js
 
 The script is 8KB minified.
 
-min-string only works on arrays of integers between 0 and 255. Compression ratios are usually within between 25% to 35% of the original size but results vary. It's intended for small data and has not been tested with large sets of data.
+min-string only works on arrays of integers between 0 and 255. Compression ratios are often within between 25% to 35% of the original size but results vary. With more random or unpredictable sets of data, min-string can usually still make smaller optimizations but sizes will likely be higher. It is intended for small data and has not been tested with large sets of data.
 
 Read about the blog post that inspired it here https://crabcyb.org/post/minimizing-shape-up
 
@@ -47,7 +47,7 @@ min-string works best with data that shares common patterns. This script is focu
 | hashids | 2554 | 84.2% |
 | base64 | 1396 | 46% |
 | min-string | 764 | 25.2% |
-| https://crabcyb.org/post/minimizing-large-shape-up | 413 | 13.6% |
+| https://crabcyb.org/post/minimizing-large-shape-up | 282 | 9.3% |
 
 **min-string with values over 255**
 
