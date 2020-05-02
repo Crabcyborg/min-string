@@ -34,7 +34,7 @@ min-string works best with data that shares common patterns. This script is focu
 | base64 | 220 | 44.3% |
 | min-string | 146 | 29.4% |
 | https://crabcyb.org/post/minimizing-large-shape-up | 111 | 22.3% |
-| http://localhost:8080/post/traversing-shape-up/?key=1588459961903 | 104 | 20.9% |
+| http://localhost:8080/post/traversing-shape-up | 104 | 20.9% |
 
 *Using the following integer array as input*
 
