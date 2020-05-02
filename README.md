@@ -49,7 +49,6 @@ min-string works best with data that shares common patterns. This script is focu
 | base64 | 1396 | 46% |
 | min-string | 764 | 25.2% |
 | https://crabcyb.org/post/minimizing-large-shape-up | 277 | 9.1% |
-| 
 
 **min-string with values over 255**
 
